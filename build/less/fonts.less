@@ -1,0 +1,28 @@
+// fonts
+@font-face {
+	font-family: 'GothaProReg';
+	src: local('GothaProReg'),
+	url('../fonts/GothaProReg.otf') format('truetype');
+	font-weight:400;
+	font-style: normal;
+}
+.GP-R {
+	font-family: 'GothaProReg', sans-serif;
+}
+.GP-M {
+	.GP-R;
+	font-weight: 600;
+}
+.GP-B {
+	.GP-R;
+	font-weight: 800;
+}
+body {
+	.GP-R;
+}
+h2 {
+	.GP-M;
+	font-size: 28px;
+	color: #686868;
+	margin: 40px 0;
+}
