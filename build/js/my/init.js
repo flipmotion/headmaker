@@ -1,5 +1,15 @@
  $(document).ready(function() {
+
+ 	$('a.smooth').click(function(){
+		$('html, body').animate({
+			scrollTop: $( $.attr(this, 'href') ).offset().top - 0
+		}, 1000);
+		return false;
+	});
  	window.addEventListener("scroll", scrolling);
+ 	$( window ).resize(function() {
+		 scrolling();
+		});
 	$(".owl-carousel").owlCarousel({
 		items : 3,
 		navigation : true,
@@ -24,17 +34,34 @@
 			}
 		}
 	});
- send();
+	send();
  	var form = $('[data-form="send"]');
-	$(form).validator().on('submit', function (e) {
+	$(form).on('submit', function (e) {
 		if ($(this).hasClass('disabled')) {
 			// handle the invalid form...
 			e.preventDefault();
+			console.log('error');
 		} else {
 			// everything looks good!
 			send();
 		}
 	});
+
+	let input1,input2,input3,input4,output;
+
+	function initI (e){
+		var inp = $('.form-group');
+		if(inp.hasClass('has-error')) {
+			$('.outputErr .error-block').css({'opacity': '1','height': 'auto'});
+		}
+		else {
+			$('.outputErr .error-block').css({'opacity': '0','height': '0px'});
+		}
+	}
+	initI();
+	$('.form-control').on('focus',initI);
+	$('.form-control').on('keyup',initI);
+	$('.form-control').on('keydown',initI);
 
 	var myMap;
 	ymaps.ready(init);
@@ -65,15 +92,15 @@
             center: [55.76, 37.64], 
             zoom: 7
         });
- 
+ 		scrolling();
  });
 
 
  function send(){
 	var form = $('[data-form="send"]');
 	form.ajaxForm(function() {
+		$('#modal-form').modal('hide');
 		$('#thx').modal('show');
-		$(form).resetForm();
 	});
 }
 
@@ -82,6 +109,7 @@ function scrolling(){
 	var scrolled = document.documentElement.scrollTop || window.pageYOffset, 
 		header = document.querySelector('.header-lvl-2'),
 		headerHeight = header.clientHeight;
+		header.style.marginTop = 0+'px';
 		if(0 < scrolled < headerHeight){
 			var j = scrolled;
 			if (j > headerHeight){

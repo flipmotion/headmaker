@@ -3,12 +3,34 @@
 		background-color: #fff;
 		position: relative;
 		z-index: 2;
+		.btn {
+			margin-top: 9px;
+		}
 		.navbar-default .navbar-collapse{
 			border: none;
 		}
+		.navbar-header {
+			position: relative;
+			.visible-xs {
+				position: absolute;
+			left: 50%;
+			margin-left: -160px;
+			}
+			p {
+				margin-bottom: 0;
+				padding-top: 13px;
+				text-align: center;
+				.GP-R;
+				font-weight: 600;
+				font-size: 18px;
+				width: 250px;
+			
+			}
+		}
 		.navbar-default {
-			background-color: #fff;
+			background: 0 0;
 			border: none;
+			margin-bottom: -1px;
 			.navbar-nav{
 				margin: 0;
 				padding: 0;
@@ -20,14 +42,19 @@
 				}
 				li {
 					a {
-						color: #b07fe2;
-						border-bottom: 2px dashed #b07fe2;
+						color: #6e6e6e;
+						border-bottom: 2px solid transparent;
 						.GP-R;
 						font-size: 14px;
 						padding: 15px 0;
+						&:hover,&:focus {
+							color: #b07fe2;
+							border-bottom: 2px solid #af7ce2;
+						}
 					}
 					&.active {
 						a {
+							color: #b07fe2;
 							background-color: #fff;
 							border-bottom: 2px solid #af7ce2;
 							&:hover {
@@ -42,7 +69,7 @@
 	&-lvl-2 {
 		padding: 40px 0;
 		background-color: #fcfcfc;
-		border-top: 2px solid #f1f1f1;
+		border-top: 1px solid #f1f1f1;
 		border-bottom: 2px solid #af7ce2;
 		position: relative;
 		z-index: 1;
@@ -53,7 +80,7 @@
 			line-height: 23px;
 			&.address {
 				img {
-					margin: 0 7px 0 -20px;
+					margin: 0 12px 0 -25px;
 				}
 			}
 			&.phone {

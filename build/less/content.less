@@ -1,5 +1,5 @@
 .sticky-page {
-	padding-top: 243px;
+	padding-top: 220px;
 }
 .content {
 	&.block-1 {
@@ -24,7 +24,7 @@
 		}
 		.btn-set {
 			margin-bottom: 120px;
-			button {
+			a {
 				margin-right: 30px;
 			}
 		}
@@ -111,22 +111,24 @@
 					font-size: 16px;
 					color: #717171;
 					display: inline-block;
-					padding: 5px 15px;
+					padding: 5px 0px;
+					border: none;
+					border-bottom: 2px dashed transparent;
+					border-radius: 0;
 					&:hover {
-						border-radius: 20px;
 						transition: all 0.2s; 
 						background-color: #fff;
-						border: 1px solid #af7ce2;
-						margin: 0;
+						border: none;
+						border-bottom: 2px dashed #af7ce2;
+						//margin: 0;
 					}
 				}
 				&.active {
 					a {
+						transition: all 0.2s; 
+						background-color: #fff;
 						border: none;
-						background-color: #af7ce2;
-						border-radius: 20px;
-						color: #fff;
-						padding: 5px 15px;
+						border-bottom: 2px dashed #af7ce2;
 					}
 				}
 				&:after {
@@ -232,22 +234,24 @@
 					font-size: 16px;
 					color: #717171;
 					display: inline-block;
-					padding: 5px 15px;
+					padding: 5px 0px;
+					border: none;
+					border-bottom: 2px dashed transparent;
+					border-radius: 0;
 					&:hover {
-						border-radius: 20px;
 						transition: all 0.2s; 
 						background-color: #fff;
-						border: 1px solid #af7ce2;
-						margin: 0;
+						border: none;
+						border-bottom: 2px dashed #af7ce2;
+						//margin: 0;
 					}
 				}
 				&.active {
 					a {
+						transition: all 0.2s; 
+						background-color: #fff;
 						border: none;
-						background-color: #af7ce2;
-						border-radius: 20px;
-						color: #fff;
-						padding: 5px 15px;
+						border-bottom: 2px dashed #af7ce2;
 					}
 				}
 				&:after {
@@ -256,7 +260,7 @@
 					border-radius: 50%;
 					font-size: 0px;
 					vertical-align: middle;
-					margin-left: 10px;
+					margin-left: 25px;
 				}
 				&:last-child {
 					&:after {
@@ -399,8 +403,10 @@
 			.example {
 				position: relative;
 				margin: 0 10px 40px;
+				border-radius: 9px;
 				img {
 					width: 100%;
+					border-radius: 9px;
 				}
 				.veil {
 					height: 100%;
@@ -409,23 +415,40 @@
 					z-index: 2;
 					width: 100%;
 					border-radius: 9px;
-					img {
-						width: 50px;
+					svg {
+						width: 55px;
+						height: 55px;
+						padding: 15px;
 						position: absolute;
 						top: 50%;
 						left: 50%;
 						margin-top: -25px;
 						margin-left: -25px;
 						opacity: 0;
-
+						background: 0 0;
+						cursor: pointer;
+						path {
+							fill:#838383;
+							transform:translateX(1px) translateY(1px) scale(.8);
+						}
+						&:before {
+							content: '';
+							position: absolute;
+							left: 0;
+							top:0;
+							bottom:0;
+							right: 0;
+							border-radius: 50%;
+							background: #fff;
+						}
 					}
 				}
 				&:hover .veil{
 					transition: all 0.25s; 
-					background-color: #af7ce2;
-					opacity: 0.7;
+					background-color: rgba(175, 124, 226, 0.66);
+					opacity: 1;
 				}
-				&:hover .veil img {
+				&:hover .veil svg {
 					transition: all 0.25s;
 					opacity: 1;
 					z-index: 3;
