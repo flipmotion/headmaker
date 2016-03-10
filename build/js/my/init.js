@@ -76,7 +76,7 @@
 			.disable(['rightMouseButtonMagnifier' , 'scrollZoom'])
 			var myPlacemark = new ymaps.Placemark([55.7844, 37.636697], {
 				hintContent: [
-				'1'
+				''
 			].join(''),
 				balloonContentBody: [
 				''// '<div class=\'map_holder\'><div class=\'map_header\'><p>Контакты</p><\/div><div class=\'map_address\'><div class=\'icon\'><\/div><p>г. Москва, м. Митино</p><\/div><div class=\'map_phone\'><div class=\'icon\'><\/div><p><strong>+ 7 965-242-97-42</strong></p><p><strong>+ 7 926-113-58-17</strong></p><\/div><div class=\'map_date\'><div class=\'icon\'><\/div><p>Пн-Пт с 09:00 до 18:00</p><\/div><div class=\'map_mail\'><div class=\'icon\'><\/div><p><a href="mailto:Topsales15@mail.ru">Topsales15@mail.ru</a></p><\/div><\/div>'
