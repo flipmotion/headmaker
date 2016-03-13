@@ -92,6 +92,7 @@ $(document).ready(function () {
 function send() {
 	var form = $('[data-form="send"]');
 	form.ajaxForm(function () {
+		$('#modal-form-header').modal('hide');
 		$('#modal-form').modal('hide');
 		$('#thx').modal('show');
 	});
