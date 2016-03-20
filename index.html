@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
+	<meta charset="utf-8">
 	<meta http-equiv="text/html" charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -471,7 +472,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
-						<button type="button" class="btn btn-default size-3" data-toggle="modal" data-target="#modal-form">Запись на восстановление волос</button>
+						<button type="button" class="btn btn-default size-3 form-home form-profile form-messages form-settings" data-toggle="modal" data-target="#modal-form">Запись на стрижку и укладку</button>
 					</div>
 				</div>
 			</div>
@@ -705,7 +706,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-12">
-						<button type="button" class="btn btn-default size-3" data-toggle="modal" data-target="#modal-form">Записаться на маникюр</button>
+						<button type="button" class="btn btn-default size-3 form-home1 form-profile1 form-messages1 form-settings1" data-toggle="modal" data-target="#modal-form">Записаться на маникюр</button>
 					</div>
 				</div>
 			</div>
@@ -996,7 +997,7 @@
 	    	<div class="modal-body">
 	        	<div class="row">
 	        		<div class="col-md-12 col-sm-12 col-xs-12">
-	        			<h2>Парикмахерский зал</h2>
+	        			<h2 class="form-label">Запись в салон</h2>
 			        	<hr>
 			        	<p>[WOW] Эффект работает ежедневно. Заполните форму 
 						и наш специалист свяжется с вами, чтобы ответить на 
@@ -1052,6 +1053,7 @@
 									</div>
 								</div>
 							</div>
+							<input type="hidden" id="servicef" name="service" value="Запись в салон">
 							<div class="row">
 								<div class="col-xs-10 col-xs-offset-1">
 									<button type="submit" class="btn btn-default btn-modal sub">Записаться</button>
@@ -1085,7 +1087,7 @@
 	    	<div class="modal-body">
 	        	<div class="row">
 	        		<div class="col-md-12 col-sm-12 col-xs-12">
-	        			<h2>Парикмахерский зал</h2>
+	        			<h2>Запись в салон</h2>
 			        	<hr>
 			        	<p>[WOW] Эффект работает ежедневно. Заполните форму 
 						и наш специалист свяжется с вами, чтобы ответить на 
@@ -1102,10 +1104,10 @@
 										<!-- <input type="text"   class="form-control my-input time" placeholder="Удобное время" /> -->
 										<select name="chose" id="chose" class="form-control my-input time" id="">
 											<option value="не указано" selected disabled>Выбор услуги</option>
-											<option value="Не важно">Стрижка</option>
-											<option value="Утро">Окрашивание</option>
-											<option value="День">Восстановление волос</option>
-											<option value="Вечер">Ногтевой сервис</option>
+											<option value="Стрижка">Стрижка</option>
+											<option value="Окрашивание">Окрашивание</option>
+											<option value="Восстановление волос">Восстановление волос</option>
+											<option value="Ногтевой сервис">Ногтевой сервис</option>
 										</select>
 									</div>
 								</div>
@@ -1212,5 +1214,6 @@
 	<script type="text/javascript" src="assets/js/SmoothScroll.js"></script>
 	<!--<script type="text/javascript" src="assets/js/typeahead.js"></script>-->
 	<script type="text/javascript" src="assets/js/app.min.js"></script>
+<!-- 	<script type="text/javascript" src="assets/js/labels.js"></script> -->
 	
 </html>

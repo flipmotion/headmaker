@@ -1,4 +1,68 @@
  $(document).ready(function() {
+ 	var labels = {
+		'home1' : [
+		'Запись на "Маникюр"',
+		'Запись на маникюр'
+		],
+		'profile1' : [
+		'Запись на "Педикюр"',
+		'Запись на педикюр'
+		],
+		'messages1' : [
+		'Запись на "Моделирование ногтей"',
+		'Запись на моделирование ногтей'
+		],
+		'settings1' : [
+		'Запись в салон',
+		'Записаться'
+		],
+		'home' : [
+		'Запись на "Стрижки и укладки"',
+		'Запись на стрижку и укладку'
+		],
+		'profile' : [
+		'Запись на "Окрашивание и колорирование"',
+		'Запись на окрашивание и колорирование'
+		],
+		'messages' : [
+		'Запись на "Восстановление волос"',
+		'Запись на восстановление волос'
+		],
+		'settings' : [
+		'Запись в "Мужской зал"',
+		'Запись в мужской зал'
+		],
+		'default' : [
+		'Запись в салон',
+		'Записаться'
+		],
+	};
+
+	var replaceText = function(event) {
+		var index = $(this).attr('aria-controls');
+		var label = labels[index][0];
+		var button = labels[index][1];
+
+		if (!label){
+			label = labels['default'][0];
+			button = labels['default'][1];
+		};
+
+		$('.form-'+index).text(button);
+		$('.form-label').text(label);
+
+		$('#servicef').attr('value', label);
+	}
+	$("a[role='tab']").on('click', replaceText);
+ 
+	$('#modal-form').on('show.bs.modal', function(e){
+		console.log(e.relatedTarget);
+		var button = e.relatedTarget,
+			text = button.innerHTML;
+
+		document.querySelector('.form-label').innerHTML = text;
+		document.querySelector('#servicef').setAttribute('value', text);
+	});
 
  	$('a.smooth').click(function(){
 		$('html, body').animate({
